@@ -25,18 +25,12 @@ class RestApiRoute extends RouteBuilder {
 
             intercept().process(new InterceptProcessor());
 
-            rest("/api/")          
-                .get("/greeting?name={name}")
+            rest("/greeting/")          
+                .get("/?name={name}")
                     .to("direct:getGreeting")
-                .post("/greeting")                    
+                .put("/")                    
                     .type(Greeting.class)      
-                    .to("direct:postGreeting");
+                    .to("direct:putGreeting");
         } 
     }
-
-    // @Override
-    // public RoutesDefinition configureRoutes(CamelContext context) throws Exception {
-    //     intercept().process(new InterceptProcessor());
-    //     return super.configureRoutes(context);
-    // }    
 }

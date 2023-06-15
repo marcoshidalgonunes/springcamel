@@ -12,7 +12,7 @@ public class GreetingService {
 		return new Greeting(++count, String.format(template, name));
 	}    
 
-    public Greeting postGreeting(Greeting greeting) {
+    public Greeting putGreeting(Greeting greeting) {
 		return new Greeting(greeting.id() + 1, String.format(template, greeting.content()));
 	}
 }

@@ -1,5 +1,6 @@
 server:
   port: 8080
 camel:
-  springboot:
-    name: ServicesRest
+  servlet:
+    mapping:
+      contextPath: /api/*

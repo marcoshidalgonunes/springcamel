@@ -14,8 +14,8 @@ public class GreetingRoute extends RouteBuilder {
             .bean(GreetingService.class, "getGreeting(${header.name})")
             .end();
 
-        from("direct:postGreeting")
-            .bean(GreetingService.class, "postGreeting(${body})")
+        from("direct:putGreeting")
+            .bean(GreetingService.class, "putGreeting(${body})")
             .end();
     }
 }
