@@ -15,6 +15,7 @@ class RestApiRoute extends RouteBuilder {
                // and output using pretty print
                 .dataFormatProperty("prettyPrint", "true")
                 // add swagger api-doc out of the box
+                .contextPath("/api/")
                 .apiContextPath("/docs")
                     .apiProperty("api.title", "User API").apiProperty("api.version", "1.2.3")
                     // and enable CORS
