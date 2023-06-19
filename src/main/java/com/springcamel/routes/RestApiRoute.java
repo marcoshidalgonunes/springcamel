@@ -3,11 +3,7 @@ package com.springcamel.routes;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
-import org.apache.camel.model.rest.RestBindingMode;
 import org.springframework.stereotype.Component;
-
-import com.springcamel.components.InterceptProcessor;
-import com.springcamel.models.Greeting;
 
 @Component
 class RestApiRoute extends RouteBuilder {
@@ -16,17 +12,13 @@ class RestApiRoute extends RouteBuilder {
     public void configure() throws Exception  {
         try (CamelContext context = new DefaultCamelContext()) {
             restConfiguration()
-                .enableCORS(true)
-                .bindingMode(RestBindingMode.json);  
-
-            intercept().process(new InterceptProcessor());
-
-            rest("/greeting/")          
-                .get("/?name={name}")
-                    .to("direct:getGreeting")
-                .put("/")                    
-                    .type(Greeting.class)      
-                    .to("direct:putGreeting");
+               // and output using pretty print
+                .dataFormatProperty("prettyPrint", "true")
+                // add swagger api-doc out of the box
+                .apiContextPath("/docs")
+                    .apiProperty("api.title", "User API").apiProperty("api.version", "1.2.3")
+                    // and enable CORS
+                    .apiProperty("cors", "true");                    
         } 
     }
 }

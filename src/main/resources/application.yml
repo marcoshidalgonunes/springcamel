@@ -1,6 +1,9 @@
 server:
   port: 8080
 camel:
+  rest:
+    binding-mode: json
+    enable-cors: true
   servlet:
     mapping:
       contextPath: /api/*
