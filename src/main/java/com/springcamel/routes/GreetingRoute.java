@@ -23,7 +23,7 @@ public class GreetingRoute extends RouteBuilder {
             .end();
 
         rest("/greeting/")          
-            .get("/?name={name}")
+            .get("/{name}")
                 .to("direct:getGreeting")
             .put("/")                    
                 .type(Greeting.class)      
