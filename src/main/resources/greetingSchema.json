@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "id",
+        "content"
+    ],
+    "properties": {
+        "id": {
+            "type": "integer",
+            "default": 0,
+            "title": "The id Schema",
+            "minimum": 0
+        },
+        "content": {
+            "type": "string",
+            "default": "",
+            "title": "The content Schema"
+        }
+    }
+}
