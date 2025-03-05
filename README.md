@@ -11,3 +11,17 @@ The following guides illustrate how to use some features concretely:
 
 * [Apache Camel Getting Started](https://camel.apache.org/camel-core/getting-started/index.html)
 * [Apache Camel Spring Boot Starters](https://camel.apache.org/camel-spring-boot/4.10.x/)
+
+## Build and Run
+
+To build the application use the following command:
+
+```
+mvn clean package
+```
+
+To run the application use the following command:
+
+```
+mvn spring-boot:run
+```
