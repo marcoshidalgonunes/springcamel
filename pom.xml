@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.2</version>
+		<version>3.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com</groupId>
@@ -24,17 +24,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.1.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.camel.springboot</groupId>
-			<artifactId>camel-openapi-java-starter</artifactId>
-			<version>4.0.0-M3</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.camel.springboot</groupId>
 			<artifactId>camel-spring-boot-starter</artifactId>
 			<version>4.0.0-M3</version>
@@ -49,6 +38,12 @@
 			<artifactId>camel-servlet-starter</artifactId>
 			<version>4.0.0-M3</version>
 		</dependency>		
+        <!-- include springodc so we can browse the api docs in a swagger web ui -->
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-springdoc-starter</artifactId>
+			<version>4.0.0-M3</version>
+        </dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-json-validator</artifactId>
